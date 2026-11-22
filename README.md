@@ -45,20 +45,19 @@ The "Open Google Pay / PhonePe" buttons work on phones. On a computer the custom
 
 Your data is saved in the `data` folder (orders.json, products.json, settings.json). Photos you upload go in `public/uploads`. **Back up both folders regularly.**
 
-## Put it on the internet
+## Put it on the internet (Netlify)
 
-The store needs a server that runs Node.js. Any of these work: a small VPS (DigitalOcean, Hostinger, AWS Lightsail), Render, Railway. Use a plan with a **persistent disk**, otherwise orders disappear when it restarts.
+The live site runs on Netlify:
 
-Settings you can give the server as environment variables:
+- The store pages are published from the `public` folder.
+- The API (`/api/*`) runs as a Netlify Server from `netlify/server/index.ts`.
+- Orders, products, settings, the admin password and logins are kept in Netlify Database. Uploaded photos are kept in Netlify Blobs.
+- The admin password you use the first time is the `ADMIN_PASSWORD` environment variable in the Netlify project settings. Change it in Admin > Settings after you log in.
+- Database tables are created automatically on deploy from `netlify/database/migrations`. The first deploy also loads the products and settings from `products.json` and `settings.json`.
 
-| Name | What it does |
-| --- | --- |
-| `PORT` | Port to listen on (default 3000) |
-| `ADMIN_PASSWORD` | Sets the admin password at start (use this on hosts where you cannot see the terminal) |
-| `COOKIE_SECURE=1` | Turn on once the site uses https |
-| `TRUST_PROXY=1` | Turn on when the host puts a proxy in front (Render, Railway, nginx) so login limits count real visitors |
+Product photos referenced as `/images/...` must be in `public/images/` in the repository.
 
-Always serve the real site over **https**. Most hosts give this free. Without it, passwords and customer details travel unprotected.
+`node server.js` still works for running the store on your own computer, with data saved in local files.
 
 ## Folder guide
 
