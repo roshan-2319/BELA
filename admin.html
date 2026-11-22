@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BELA Admin</title>
+<link rel="icon" href="/images/logo-emblem.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<style>
+.admin-top { border-bottom: 1px solid var(--line-soft); }
+.admin-top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+.admin-top .brand-name { font-size: 24px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 24px; }
+.tab { min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: 16px; cursor: pointer; }
+.tab[aria-pressed="true"] { border-color: var(--accent); background: var(--raised); color: var(--accent); }
+.login { max-width: 420px; margin: 80px auto; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+table { width: 100%; border-collapse: collapse; min-width: 720px; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line-soft); vertical-align: top; font-size: 15px; }
+th { color: var(--muted); font-weight: 500; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+.pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; border: 1px solid var(--line); }
+.pill.pending { border-color: #C9A24E; color: #E8C46A; }
+.pill.paid, .pill.delivered { border-color: #6DA37A; color: #93CFA1; }
+.pill.shipped { border-color: #7AA0C9; color: #A3C4E8; }
+.pill.cancelled { border-color: #A6665B; color: #E2A599; }
+select, .small-input { min-height: 40px; border-radius: 8px; border: 1px solid #5A4337; background: var(--bg); color: var(--text); font-family: inherit; font-size: 15px; padding: 0 10px; }
+.stats { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px 0; }
+.stat { flex: 1 1 180px; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 16px 20px; }
+.stat b { display: block; font-size: 28px; color: var(--accent); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 14px; color: var(--muted); }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.checks { display: flex; flex-wrap: wrap; gap: 20px; }
+.checks label { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.checks input { width: 20px; height: 20px; accent-color: #E3C29B; }
+.thumbs { display: flex; flex-wrap: wrap; gap: 10px; }
+.thumbs .th { position: relative; width: 84px; height: 105px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+.thumbs .th img { width: 100%; height: 100%; object-fit: cover; }
+.thumbs .th button { position: absolute; top: 4px; right: 4px; width: 28px; height: 28px; border-radius: 50%; border: 0; background: var(--bg); color: var(--text); cursor: pointer; font-size: 16px; line-height: 1; }
+.row-thumb { width: 44px; height: 55px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+.row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.mini { min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: 14px; }
+.mini.danger { border-color: #A6665B; color: #E2A599; }
+.ok { color: #93CFA1; font-size: 15px; min-height: 22px; }
+.box { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 24px; margin-top: 24px; display: flex; flex-direction: column; gap: 18px; }
+.box h2 { font-size: 28px; }
+</style>
+</head>
+<body>
+<header class="admin-top"><div class="wrap">
+  <div class="brand"><img src="/images/logo-emblem.jpg" alt="" width="40" height="40" style="width:40px;height:40px"><span class="brand-name">BELA <span class="muted" style="font-size:16px;letter-spacing:.1em;font-family:var(--sans)">Admin</span></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="mini" href="/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;text-decoration:none">View store</a><button class="mini" id="logoutBtn" hidden>Log out</button></div>
+</div></header>
+<main class="wrap" id="app" style="padding-bottom:72px"></main>
+<script src="/admin.js"></script>
+</body>
+</html>

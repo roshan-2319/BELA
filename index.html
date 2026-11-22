@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BELA</title>
+<meta name="description" content="BELA: cosmetics, jewellery and clothing. Pay with Google Pay or PhonePe.">
+<meta name="theme-color" content="#1E1411">
+<link rel="icon" href="/images/logo-emblem.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true"><div class="introbg"></div></div>
+<div class="wipe" id="wipe" aria-hidden="true" hidden>BELA</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <button class="brand" data-action="go" data-view="shop" aria-label="BELA home">
+      <img src="/images/logo-emblem.jpg" alt="" width="48" height="48">
+      <span class="brand-name">BELA</span>
+    </button>
+    <nav aria-label="Store">
+      <button class="nav-link" data-action="go" data-view="shop">Shop</button>
+      <button class="bag-btn" data-action="go" data-view="cart">Bag (<span id="bagCount">0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+<div id="view"></div>
+<div class="bar" id="bar" hidden></div>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <div>
+      <div class="brand-name small">BELA</div>
+      <div class="muted">Cosmetics · Jewellery · Clothing</div>
+    </div>
+    <div class="muted footer-right">
+      <div id="footContact"></div>
+      <div>Payments by Google Pay and PhonePe (UPI)</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

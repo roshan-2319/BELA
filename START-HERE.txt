@@ -1,0 +1,8 @@
+# Start here
+
+Do NOT open index.html directly. It will look broken.
+
+Windows: double-click START-BELA.bat. The store opens at http://localhost:3000
+Admin page: http://localhost:3000/admin  (your first password is printed in the black window)
+
+Keep the black window open while you use the store. Close it to stop the store.
